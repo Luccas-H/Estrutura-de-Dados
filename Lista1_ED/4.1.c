@@ -10,7 +10,7 @@ int matrizAlocadaBloco() // aloca um bloco de memoria pra matriz
 
     int *matriz = (int *)malloc(linhas * colunas * sizeof(int)); // Alocando o bloco 
 
-    if(matriz == NULL)// Prevenção pra não dar ruim
+    if(matriz == NULL)
     {
         printf("Erro de alocacao");
         return 1;
@@ -67,7 +67,7 @@ int matrizAlocadaArray()//aloca um array de ponteiros para as linhas
     {
         for(int i = 0; i< linhas; i++)
         {
-        // Alocação de memoria pra cada linha. Como se eu falasse quanto de memoria cada linha vai precisar. Meio confuso ainda!
+        // Alocação de memoria pra cada linha. Como se eu falasse quanto de memoria cada linha vai precisar.
         //eu como se eu falasse quantas colunas vão ter em uma linha. Ex: 4 cols -> linha = [1º coluna,2º coluna,3º coluna,4º coluna]
             matriz[i] = (int*)malloc(colunas*sizeof(int));   
             if(matriz[i] == NULL)
