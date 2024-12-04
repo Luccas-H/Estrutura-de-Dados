@@ -39,9 +39,14 @@ int desempilha(Pilha* p)
     {
         return 0;
     }
-    p->vet[p->topo -1];
-    p->topo--;
+    if(p->topo >= 0)
+    {
+        int valor = p->vet[p->topo -1];
+        p->topo--;
+        return valor;
+    }
     return 1;
+    
 }
 int estavazio(Pilha* p)
 {
@@ -60,15 +65,19 @@ void calc_operando(Calc *c, float v) {
 
 void calc_operador(Calc *c, char op) {
     float v1, v2, v;
-    if (estavazio(c->p))
+    if (estavazio(c->p)) {
         v2 = 0.0;
-    else
+    } 
+    else {
         v2 = desempilha(c->p);
-    if (estavazio(c->p))
+    }
+
+    if (estavazio(c->p)) {
         v1 = 0.0;
-    else
+    }
+    else {
         v1 = desempilha(c->p);
-    
+    }
     switch (op) {
         case '+': v = v1 + v2; break;
         case '-': v = v1 - v2; break;
@@ -77,9 +86,8 @@ void calc_operador(Calc *c, char op) {
     }
     
     empilha(c->p, v);
-    printf(c->f, v);
+    printf("Resultado: %.2f\n", v,c->f);
 }
-
 void liberaPilha(Pilha* p)
 {
     free(p);
