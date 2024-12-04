@@ -1,10 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h>
+#include <ctype.h>
+#include <string.h>
 #include "calculadora.h"
 
 int main() {
     char c;
     float v;
     Calc *calc;
+    Pilha* p;
 
     calc = calc_cria("%.2f\n");
     do {
@@ -18,7 +22,7 @@ int main() {
             }
         }
     } while (c != 'q');
-    
-    calc_libera(calc);
+    calc_libera(calc);;
+    system("PAUSE");
     return 0;
 }
