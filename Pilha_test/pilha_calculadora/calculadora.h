@@ -7,6 +7,12 @@ typedef struct pilha
 
 }Pilha;
 
+struct calc {
+    char f[21];
+    Pilha *p;
+};
+typedef struct calc Calc;
+
 Pilha* cria_pilha();
 void liberaPilha(Pilha* p);
 int empilha(Pilha* p, int v);
