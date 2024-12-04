@@ -14,9 +14,13 @@ struct calc {
 typedef struct calc Calc;
 
 Pilha* cria_pilha();
+void calc_libera(Calc *c);
 void liberaPilha(Pilha* p);
 int empilha(Pilha* p, int v);
 int desempilha(Pilha* p);
 int estacheio(Pilha* p);
 int estavazio(Pilha* p);
 int topo(Pilha* p);
+Calc *calc_cria(char *formato);
+void calc_operando(Calc *c, float v);
+void calc_operador(Calc *c, char op);
