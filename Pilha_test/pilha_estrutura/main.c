@@ -10,23 +10,23 @@ int main()
     empilha(p, 30);
 
     if (estacheio(p)) {
-        printf("A pilha está cheia!\n");
+        printf("A pilha esta cheia\n");
     } else {
-        printf("A pilha NÃO está cheia.\n");
+        printf("A pilha NAO esta cheia\n");
     }
     
 
     if (estavazio(p)) {
-        printf("A pilha está vazia!\n");
+        printf("A pilha esta vazia\n");
     } else {
-        printf("A pilha NÃO está vazia.\n");
+        printf("A pilha NAO esta vazia\n");
     }
 
     printf("Topo da pilha: %d\n", topo(p));
     if (desempilha(p, &v)) {
         printf("Desempilhado: %d\n", v);
     }
-    printf("Topo da pilha após desempilhar: %d\n", topo(p));
+    printf("Topo da pilha apos desempilhar: %d\n", topo(p));
     liberaPilha(p);
     system("PAUSE");
     return 0;
